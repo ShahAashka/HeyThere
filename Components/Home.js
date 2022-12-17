@@ -13,17 +13,20 @@ const Home = ({navigation}) => {
     );
   };
   const handleChatNav = () => {
-    navigation.navigate('ChatScreen');
+    navigation.navigate('MapScreen');
   };
   const handleMapNav = () => {
-    navigation.navigate('MapScreen');
+    navigation.navigate('UserListScreen');
   };
 
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.mainView}>
-        <HomeScreenButtons name={'Chat Screen'} pressActivity={handleChatNav} />
-        <HomeScreenButtons name={'Map Screen'} pressActivity={handleMapNav} />
+        <HomeScreenButtons
+          name={'Contact List'}
+          pressActivity={handleChatNav}
+        />
+        <HomeScreenButtons name={'Chat List'} pressActivity={handleMapNav} />
       </View>
     </SafeAreaView>
   );

@@ -1,11 +1,19 @@
 import React from 'react';
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {Channel, MessageList, MessageInput} from 'stream-chat-react-native';
+import {Text} from 'react-native';
 
-const ChatScreen = ({navigation}) => {
-  return (
-    <View>
-      <Text>abc</Text>
-    </View>
-  );
+const ChatScreen = ({route}) => {
+  const channel = route.params?.channel;
+  console.log(route, 'AA');
+  if (!channel) {
+    return <Text>Channel not found</Text>;
+  } else {
+    return (
+      <Channel channel={channel}>
+        <MessageList />
+        <MessageInput />
+      </Channel>
+    );
+  }
 };
 export default ChatScreen;
