@@ -4,7 +4,6 @@ import {Text} from 'react-native';
 
 const ChatScreen = ({route}) => {
   const channel = route.params?.channel;
-  console.log(route, 'AA');
   if (!channel) {
     return <Text>Channel not found</Text>;
   } else {
